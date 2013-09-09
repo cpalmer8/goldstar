@@ -1,0 +1,11 @@
+<h1>{{ task.listname }}</h1>
+{% for item in task.item_set.all  %}
+    <p>{{ item.listitem }} 
+        <form action="{% url 'edit_item' task.id item.id %}" method="post">
+            {% csrf_token %}
+            <input type="text" name="item_edit" id="item_edit">
+            <input type="submit" value="Edit">
+        </form>
+     </p>
+{% endfor %}
+<a href="{% url 'add' task.id %}">New Task</a>

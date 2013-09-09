@@ -1,0 +1,9 @@
+<h1>Create Account</h1>
+
+<form action="{% url 'create_user' %}" method="post">
+    {% csrf_token %}
+    <p>Username: <input type="text" name="username" id="create_username"/></p>
+    <p>Password: <input type="text" name="password" id="create_password"/></p>
+    <p>E-mail: <input type="text" name="email" id="create_email"/></p>
+    <p><input type="submit" value="Create User"/></p>
+</form>

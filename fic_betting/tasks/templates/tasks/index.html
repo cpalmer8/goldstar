@@ -1,0 +1,9 @@
+{% if latest_task_list %}
+    <ul>
+        {% for listitem in latest_task_list %}
+            <li><a href="{% url 'itemlist' listitem.id %}"/>{{ listitem.listname }}</a> </li>
+        {% endfor %}
+    </ul>
+{% else %}
+    <p>No tasks are available.</p>
+{% endif %}
