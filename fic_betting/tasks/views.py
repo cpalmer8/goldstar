@@ -48,7 +48,8 @@ def add(request, task_id):
 
 def additem(request, task_id):
     t = get_object_or_404(ToDoList, id=task_id)
-    item = Item(todolist=t, listitem=request.POST['listitem'], due_date=timezone.now(), 
+    due_date = request.POST['datepicker']+ " 12:03"
+    item = Item(todolist=t, listitem=request.POST['listitem'], due_date=due_date, 
             done="false")
     item.save()
     return HttpResponseRedirect(reverse('itemlist', kwargs={'task_id' : t.id }))

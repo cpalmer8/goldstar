@@ -1,4 +1,19 @@
+<html>
+<head>
+    <script type="text/javascript" src="/static/jquery-1.10.2.js">
+    </script>
+    <link rel="stylesheet" href="/static/css/ui-lightness/jquery-ui-1.10.3.custom.css" />
+    <script src="/static/jquery-ui-1.10.3.custom.js"></script>
+    <script>
+        $(function() {
+            $("#datepicker").datepicker({ dateFormat: "yy-mm-dd" });
+        });
+    </script>
+</head>    
+<body>
 <h1>{{ todolist.listname }}</h1>
+
+
 
 {% if error_message %} <p><strong>{{ error_message }}</strong></p> {% endif %}
 
@@ -6,5 +21,8 @@
     {% csrf_token %}
         <input type="text" name="listitem" id="item1"/>
         <label for="item1">Item 1</label><br/>
-    <input type="submit" value="Add Item"/>
+        <p>Date: <input type="text" id="datepicker" name="datepicker" /></p>
+        <input type="submit" value="Add Item"/>
 </form>
+</body>
+</html>

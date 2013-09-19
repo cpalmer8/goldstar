@@ -2,3 +2,9 @@
 *.pot
 *.pyc
 local_settings.py
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+.sqlite
